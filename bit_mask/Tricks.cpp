@@ -13,8 +13,22 @@ long largest_power(long N)
     return (N+1)>>1;
 } 
 
-x ^ ( x & (x-1)) : Returns the rightmost 1 in binary representation of x.
+Notice what x - 1 does to bit representation of x.
+x - 1 would find the first set bit from the end, and then set it to 0, and set all the bits following it.
 
+Which means if x = 10101001010100
+                              ^
+                              |
+                              |
+                              |
+
+                       First set bit from the end
+Then x - 1 becomes 10101001010(011)
+
+All other bits in x - 1 remain unaffected.
+This means that if we do (x & (x - 1)), it would just unset the last set bit in x (which is why x&(x-1) is 0 for powers of 2).
+x ^ ( x & (x-1)) : Returns the rightmost 1 in binary representation of x.
+  
 Used in finding duplicates
   A^0=A
   A^A=0
