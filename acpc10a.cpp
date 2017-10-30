@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include<bits/stdc++.h>//nocomment
 using namespace std;
 int main() {
 	int a,b,c;
